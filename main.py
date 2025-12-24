@@ -21,7 +21,7 @@ def deserialize_car_object(json: bytes) -> Car:
 
     validated_data = serializer.validated_data
 
-    return Car(
+    return Car.objects.create(
         manufacturer=validated_data["manufacturer"],
         model=validated_data["model"],
         horse_powers=validated_data["horse_powers"],
